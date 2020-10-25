@@ -30,6 +30,7 @@ namespace HashTableAndBST
 
         // Variable
         MyBinaryNode<T> rootNode;
+        static int count = 0;
 
         /// <summary>
         /// UC 1 Adds the specified data.
@@ -70,6 +71,29 @@ namespace HashTableAndBST
                 else
                     temp.rightTree.Add(data);
             }
+        }
+
+        /// <summary>
+        /// UC 2 Sizes this instance.
+        /// </summary>
+        /// <returns></returns>
+        public int Size()
+        {
+            int count = 0;
+            if(this.rootNode == null)
+            {
+                return 0;
+            }
+            if(rootNode.leftTree !=null)
+            {
+                count += rootNode.leftTree.Size();
+            }
+            if(rootNode.rightTree != null)
+            {
+                count += rootNode.rightTree.Size();
+            }
+            count++;
+            return count;
         }
     }
 }
