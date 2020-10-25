@@ -102,5 +102,64 @@ namespace HashTableAndBST
             count++;
             return count;
         }
+
+        /// <summary>
+        /// UC 3 Displays the in order.
+        /// </summary>
+        public void DisplayInOrder()
+        {
+            // If the tree is empty
+            if (this.rootNode == null)
+            {
+                Console.WriteLine("Tree is empty");
+                return ;
+            }
+
+            if(rootNode.leftTree != null)
+            {
+                rootNode.leftTree.DisplayInOrder();
+            }
+
+            Console.WriteLine(rootNode.data);
+
+            if(rootNode.rightTree != null)
+            {
+                rootNode.rightTree.DisplayInOrder();
+            }
+        }
+
+        /// <summary>
+        /// UC 3 Searches the specified data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <returns></returns>
+        public bool Search(T data)
+        {
+            // If the tree is empty
+            if (this.rootNode == null)
+            {
+                Console.WriteLine("\nTree is empty");
+                return false;
+            }
+
+            // Compare the given data with rootNode data
+            int comparision = data.CompareTo(rootNode.data);
+
+            // If rootNode is the searched element
+            if (comparision == 0)
+            {
+                Console.WriteLine("\n{0} is found in tree", data);
+                return true;
+            }
+
+            else if (comparision < 0 && rootNode.leftTree != null)
+                return rootNode.leftTree.Search(data);
+
+            else if (comparision > 0 && rootNode.rightTree != null)
+                return rootNode.rightTree.Search(data);
+
+            Console.WriteLine("\n{0} is not found in tree", data);
+            return false;
+        }
     }
 }
