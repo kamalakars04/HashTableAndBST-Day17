@@ -1,4 +1,11 @@
-﻿namespace HashTableAndBST
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="fileName.cs" company="Bridgelabz">
+//   Copyright © 2018 Company
+// </copyright>
+// <creator Name="Your name"/>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace HashTableAndBST
 {
     using System;
     class Program
