@@ -31,6 +31,12 @@ namespace HashTableAndBST
             hashTables.Remove("To");
             Console.WriteLine("\nElements and their frequencies after deletion");
             hashTables.Display();
+
+            // UC 1 Add to BinarySearchTree
+            BinarySearchTree<int> binarySearchTree = new BinarySearchTree<int>();
+            binarySearchTree.Add(56);
+            binarySearchTree.Add(30);
+            binarySearchTree.Add(70);
         }
     }
 }
