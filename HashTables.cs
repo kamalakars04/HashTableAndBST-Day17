@@ -67,7 +67,11 @@
             {
                 linkedlist[index] = new LinkedList<MyMapNode>();
             }
-            foreach(MyMapNode element in linkedlist[index])
+
+            // Search the linked list of respective index
+            // If key already exists then increase its frequency
+            // Else add the element
+            foreach (MyMapNode element in linkedlist[index])
             {
                 if (element.Key.Equals(key))
                 {
@@ -93,7 +97,11 @@
                 Console.WriteLine("The frequency of {0} is {1}", key, 0);
                 return 0;
             }
-            foreach(MyMapNode element in linkedlist[index])
+
+            // Search the linked list of respective index
+            // If key already exists then return its frequency
+            // Else return 0
+            foreach (MyMapNode element in linkedlist[index])
             {
                 if (element.Key.Equals(key))
                 {
@@ -103,6 +111,55 @@
             }
             Console.WriteLine("The frequency of {0} is {1}", key, 0);
             return 0; 
+        }
+
+        public void Remove(string key)
+        {
+            int index = GetArrayIndex(key);
+
+            // If the linked list at that index is null
+            if (linkedlist[index] == null)
+            {
+                Console.WriteLine("The element not found");
+                return ;
+            }
+            int count = 0;
+            MyMapNode temp = null;
+
+            // Search the linked list of respective index
+            // If the element is found then proceed
+            // else return
+            foreach (MyMapNode element in linkedlist[index])
+            {
+                count++;
+                if (element.Key.Equals(key))
+                {
+                    temp = element;
+                    break;
+                }
+                else if (linkedlist[index].Count == count)
+                    return;
+            }
+
+            // Remove the element if it exists
+            linkedlist[index].Remove(temp);
+        }
+
+        /// <summary>
+        /// UC 3 Displays this instance.
+        /// </summary>
+        public void Display()
+        {
+            foreach(var index in linkedlist)
+            {
+                if (index != null)
+                {
+                    foreach (var element in index)
+                    {
+                        Console.WriteLine(element.Key + " " + element.Value);
+                    }
+                }
+            }
         }
 
         /// <summary>
