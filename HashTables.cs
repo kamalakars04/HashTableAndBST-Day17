@@ -81,7 +81,7 @@
         }
 
         /// <summary>
-        /// UC 1 Gets the value.
+        /// UC 2 Gets the value.
         /// </summary>
         /// <param name="key">The key.</param>
         /// <returns></returns>
