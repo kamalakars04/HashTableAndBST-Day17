@@ -15,7 +15,8 @@
                 hashTables.Add(s);
 
              // Trying to get the frequency of a word
-             hashTables.GetValue("bee");
+             hashTables.GetValue("be");
+            hashTables.GetValue("To");
         }
     }
 }
